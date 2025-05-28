@@ -1,0 +1,626 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cartilha de Segurança Cibernética - SENAC</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
+    <style>
+        :root {
+            --azul-escuro: #1e3a8a;
+            --vermelho: #dc2626;
+            --verde: #16a34a;
+            --amarelo: #eab308;
+            --cinza: #6b7280;
+            --laranja: #ea580c;
+            --roxo: #7c3aed;
+            --rosa: #ec4899;
+            --azul-petroleo: #164e63;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+        }
+
+        .navbar {
+            background-color: var(--azul-escuro) !important;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .hero-section {
+            background: linear-gradient(135deg, var(--azul-escuro), var(--azul-petroleo));
+            color: white;
+            padding: 80px 0;
+        }
+
+        .section-title {
+            color: var(--azul-escuro);
+            font-weight: 700;
+            margin-bottom: 2rem;
+        }
+
+        .security-card {
+            border: none;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+            height: 100%;
+        }
+
+        .security-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .alert-card {
+            border-left: 4px solid var(--vermelho);
+            background-color: #fef2f2;
+        }
+
+        .protection-card {
+            border-left: 4px solid var(--verde);
+            background-color: #f0fdf4;
+        }
+
+        .tech-card {
+            border-left: 4px solid var(--roxo);
+            background-color: #faf5ff;
+        }
+
+        .warning-card {
+            border-left: 4px solid var(--laranja);
+            background-color: #fff7ed;
+        }
+
+        .highlight-box {
+            background-color: var(--amarelo);
+            color: #000;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+            font-weight: 600;
+        }
+
+        .icon-circle {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            font-size: 1.5rem;
+            color: white;
+        }
+
+        .icon-security { background-color: var(--azul-escuro); }
+        .icon-alert { background-color: var(--vermelho); }
+        .icon-protection { background-color: var(--verde); }
+        .icon-tech { background-color: var(--roxo); }
+        .icon-warning { background-color: var(--laranja); }
+
+        .cta-section {
+            background-color: var(--azul-petroleo);
+            color: white;
+        }
+
+        .btn-custom {
+            background-color: var(--verde);
+            border-color: var(--verde);
+            color: white;
+            font-weight: 600;
+            padding: 12px 30px;
+            border-radius: 25px;
+        }
+
+        .btn-custom:hover {
+            background-color: #15803d;
+            border-color: #15803d;
+            color: white;
+        }
+
+        .footer {
+            background-color: var(--azul-escuro);
+            color: white;
+        }
+
+        .stats-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--amarelo);
+        }
+
+        .law-badge {
+            background-color: var(--cinza);
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            margin: 0.25rem;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#home">
+                <i class="bi bi-shield-check me-2"></i>SENAC - Segurança Digital
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#introducao">Introdução</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#dicas">Dicas</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#ameacas">Ameaças</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#golpes">Golpes</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#cyberbullying">Cyberbullying</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#praticas">Boas Práticas</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h1 class="display-4 fw-bold mb-4">Cartilha de Segurança Cibernética</h1>
+                    <p class="lead mb-4">Orientando os colaboradores do SENAC para um ambiente digital mais seguro e protegido</p>
+                    <div class="highlight-box">
+                        <i class="bi bi-lightbulb me-2"></i>
+                        O conhecimento é a sua maior ferramenta de defesa
+                    </div>
+                    <a href="#introducao" class="btn btn-custom btn-lg mt-3">
+                        <i class="bi bi-arrow-down me-2"></i>Começar Agora
+                    </a>
+                </div>
+                <div class="col-lg-6 text-center">
+                    <div class="icon-circle icon-security mx-auto" style="width: 120px; height: 120px; font-size: 3rem;">
+                        <i class="bi bi-shield-lock"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Introdução -->
+    <section id="introducao" class="py-5">
+        <div class="container">
+            <h2 class="section-title text-center">O que é Segurança Digital?</h2>
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <div class="card security-card p-4">
+                        <p class="lead text-center mb-4">É a proteção de informações digitais contra roubo, dano ou acesso indevido. Isso inclui desde dados pessoais até sistemas corporativos e governamentais.</p>
+                        <div class="row text-center">
+                            <div class="col-md-4 mb-3">
+                                <div class="icon-circle icon-protection">
+                                    <i class="bi bi-person-check"></i>
+                                </div>
+                                <h5>Proteção de Dados</h5>
+                                <p>Dados pessoais e sensíveis seguros</p>
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <div class="icon-circle icon-alert">
+                                    <i class="bi bi-exclamation-triangle"></i>
+                                </div>
+                                <h5>Prevenção</h5>
+                                <p>Fraudes e crimes cibernéticos</p>
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <div class="icon-circle icon-tech">
+                                    <i class="bi bi-building"></i>
+                                </div>
+                                <h5>Continuidade</h5>
+                                <p>Garantia da continuidade de negócios</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Leis Brasileiras -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <h2 class="section-title text-center">Leis Brasileiras de Proteção</h2>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="card security-card p-4 text-center">
+                        <div class="icon-circle icon-security">
+                            <i class="bi bi-file-earmark-text"></i>
+                        </div>
+                        <h5>LGPD</h5>
+                        <span class="law-badge">Lei nº 13.709/2018</span>
+                        <p class="mt-3">Regula o uso de dados pessoais e exige consentimento para coleta e uso de informações.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card security-card p-4 text-center">
+                        <div class="icon-circle icon-tech">
+                            <i class="bi bi-globe"></i>
+                        </div>
+                        <h5>Marco Civil</h5>
+                        <span class="law-badge">Lei nº 12.965/2014</span>
+                        <p class="mt-3">Estabelece direitos e deveres no uso da internet, garantindo privacidade e neutralidade.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card security-card p-4 text-center">
+                        <div class="icon-circle icon-alert">
+                            <i class="bi bi-laptop"></i>
+                        </div>
+                        <h5>Lei Carolina Dieckmann</h5>
+                        <span class="law-badge">Lei nº 12.737/2012</span>
+                        <p class="mt-3">Tipifica crimes cibernéticos como invasão de dispositivos e roubo de dados.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dicas de Proteção -->
+    <section id="dicas" class="py-5">
+        <div class="container">
+            <h2 class="section-title text-center">Como se Proteger no Ambiente Digital</h2>
+            <div class="row">
+                <div class="col-lg-6 mb-4">
+                    <div class="card protection-card p-4">
+                        <h5><i class="bi bi-key text-success me-2"></i>Senhas Fortes</h5>
+                        <ul class="mb-0">
+                            <li>Use combinações de letras maiúsculas, minúsculas, números e símbolos</li>
+                            <li>Evite informações óbvias (datas, nomes)</li>
+                            <li>Troque senhas regularmente</li>
+                            <li>Use senhas diferentes para cada serviço</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-6 mb-4">
+                    <div class="card tech-card p-4">
+                        <h5><i class="bi bi-shield-check text-purple me-2"></i>Autenticação de Dois Fatores (2FA)</h5>
+                        <ul class="mb-0">
+                            <li>Adicione uma camada extra de segurança</li>
+                            <li>Use SMS, aplicativos autenticadores ou biometria</li>
+                            <li>Ative em contas sensíveis</li>
+                            <li>Protege mesmo se a senha for descoberta</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-6 mb-4">
+                    <div class="card warning-card p-4">
+                        <h5><i class="bi bi-arrow-clockwise text-warning me-2"></i>Backup de Dados</h5>
+                        <ul class="mb-0">
+                            <li>Faça cópias regulares de arquivos importantes</li>
+                            <li>Use nuvem segura ou HDs externos</li>
+                            <li>Teste os backups periodicamente</li>
+                            <li>Mantenha múltiplas cópias</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-6 mb-4">
+                    <div class="card alert-card p-4">
+                        <h5><i class="bi bi-exclamation-circle text-danger me-2"></i>Boas Práticas Gerais</h5>
+                        <ul class="mb-0">
+                            <li>Mantenha sistemas e aplicativos atualizados</li>
+                            <li>Use antivírus e firewalls confiáveis</li>
+                            <li>Não clique em links suspeitos</li>
+                            <li>Desconfie de e-mails que pedem informações pessoais</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Principais Ameaças -->
+    <section id="ameacas" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="section-title text-center">Invasões Digitais: Principais Ameaças</h2>
+            <div class="row">
+                <div class="col-lg-6 mb-4">
+                    <div class="card security-card p-4">
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="icon-circle icon-alert me-3" style="width: 50px; height: 50px;">
+                                <i class="bi bi-envelope-exclamation"></i>
+                            </div>
+                            <h5 class="mb-0">Phishing</h5>
+                        </div>
+                        <p><strong>O que é:</strong> Golpe onde criminosos fingem ser instituições confiáveis para roubar dados como senhas e informações pessoais.</p>
+                        <p><strong>Como se proteger:</strong></p>
+                        <ul>
+                            <li>Verifique se o remetente é confiável</li>
+                            <li>Nunca clique em links suspeitos</li>
+                            <li>Ative a verificação em duas etapas</li>
+                            <li>Use antivírus com filtro antiphishing</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-6 mb-4">
+                    <div class="card security-card p-4">
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="icon-circle icon-warning me-3" style="width: 50px; height: 50px;">
+                                <i class="bi bi-bug"></i>
+                            </div>
+                            <h5 class="mb-0">Malware</h5>
+                        </div>
+                        <p><strong>O que é:</strong> Software malicioso criado para danificar, espionar ou assumir controle de dispositivos. Inclui vírus, spyware e ransomware.</p>
+                        <p><strong>Como se proteger:</strong></p>
+                        <ul>
+                            <li>Mantenha o antivírus atualizado</li>
+                            <li>Baixe apenas de sites confiáveis</li>
+                            <li>Evite programas piratas</li>
+                            <li>Não instale cracks</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-6 mb-4">
+                    <div class="card security-card p-4">
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="icon-circle icon-tech me-3" style="width: 50px; height: 50px;">
+                                <i class="bi bi-arrow-repeat"></i>
+                            </div>
+                            <h5 class="mb-0">Worm (Verme Digital)</h5>
+                        </div>
+                        <p><strong>O que é:</strong> Tipo de malware que se espalha automaticamente entre computadores usando redes e dispositivos conectados.</p>
+                        <p><strong>Como se proteger:</strong></p>
+                        <ul>
+                            <li>Atualize o sistema operacional regularmente</li>
+                            <li>Use firewall e antivírus eficazes</li>
+                            <li>Desative funções de rede desnecessárias</li>
+                            <li>Faça escaneamentos regulares</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-6 mb-4">
+                    <div class="card security-card p-4">
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="icon-circle icon-alert me-3" style="width: 50px; height: 50px;">
+                                <i class="bi bi-download"></i>
+                            </div>
+                            <h5 class="mb-0">Trojan (Cavalo de Troia)</h5>
+                        </div>
+                        <p><strong>O que é:</strong> Malware que se disfarça de software inofensivo, mas abre caminho para invasores acessarem o sistema.</p>
+                        <p><strong>Como se proteger:</strong></p>
+                        <ul>
+                            <li>Instale apenas programas de fontes confiáveis</li>
+                            <li>Evite sites não oficiais</li>
+                            <li>Não use softwares piratas</li>
+                            <li>Use soluções que detectem comportamento suspeito</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Golpes Digitais -->
+    <section id="golpes" class="py-5">
+        <div class="container">
+            <h2 class="section-title text-center">Golpes Digitais Comuns</h2>
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <div class="card alert-card p-4 h-100">
+                        <div class="icon-circle icon-warning">
+                            <i class="bi bi-chat-dots"></i>
+                        </div>
+                        <h5 class="text-center">Golpes em Apps de Mensagem</h5>
+                        <p>Criminosos clonam números e fingem ser conhecidos para pedir dinheiro ou informações pessoais.</p>
+                        <h6 class="text-danger">Como se proteger:</h6>
+                        <ul>
+                            <li>Ative verificação em duas etapas</li>
+                            <li>Desconfie de pedidos urgentes</li>
+                            <li>Nunca compartilhe códigos de verificação</li>
+                            <li>Confirme a identidade por outros meios</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <div class="card alert-card p-4 h-100">
+                        <div class="icon-circle icon-warning">
+                            <i class="bi bi-cart"></i>
+                        </div>
+                        <h5 class="text-center">Golpes em Compras Online</h5>
+                        <p>Sites falsos ou anúncios enganosos com preços muito baixos. Você paga mas não recebe o produto.</p>
+                        <h6 class="text-danger">Como se proteger:</h6>
+                        <ul>
+                            <li>Verifique se o site é confiável</li>
+                            <li>Pesquise avaliações de outros clientes</li>
+                            <li>Use métodos de pagamento seguros</li>
+                            <li>Evite clicar em links suspeitos</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <div class="card alert-card p-4 h-100">
+                        <div class="icon-circle icon-warning">
+                            <i class="bi bi-receipt"></i>
+                        </div>
+                        <h5 class="text-center">Golpes com Boletos Falsos</h5>
+                        <p>Boletos bancários adulterados que redirecionam o pagamento para contas de criminosos.</p>
+                        <h6 class="text-danger">Como se proteger:</h6>
+                        <ul>
+                            <li>Gere boletos apenas em sites oficiais</li>
+                            <li>Confira o nome do beneficiário</li>
+                            <li>Verifique o código de barras</li>
+                            <li>Use apps de bancos para escanear</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cyberbullying -->
+    <section id="cyberbullying" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="section-title text-center">Cyberbullying: Prevenção e Denúncia</h2>
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <div class="card security-card p-4 mb-4">
+                        <div class="text-center mb-4">
+                            <div class="icon-circle mx-auto" style="background-color: var(--rosa);">
+                                <i class="bi bi-heart"></i>
+                            </div>
+                            <h5>O que é Cyberbullying?</h5>
+                            <p class="lead">É a prática de agredir, intimidar, humilhar ou assediar alguém por meio de plataformas digitais, como redes sociais, aplicativos de mensagens ou jogos online.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6 mb-4">
+                    <div class="card security-card p-4">
+                        <h5 class="text-danger"><i class="bi bi-exclamation-triangle me-2"></i>Exemplos de Cyberbullying</h5>
+                        <ul>
+                            <li>Disseminação de boatos e fofocas</li>
+                            <li>Exposição de fotos ou vídeos íntimos sem consentimento</li>
+                            <li>Criação de perfis falsos</li>
+                            <li>Envio de mensagens ameaçadoras</li>
+                            <li>Exclusão proposital de grupos online</li>
+                            <li>Hacking de contas pessoais</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-6 mb-4">
+                    <div class="card protection-card p-4">
+                        <h5 class="text-success"><i class="bi bi-telephone me-2"></i>Como Denunciar</h5>
+                        <ul>
+                            <li><strong>Plataformas Digitais:</strong> Use ferramentas de denúncia das redes sociais</li>
+                            <li><strong>Disque 100:</strong> Serviço gratuito 24h para direitos humanos</li>
+                            <li><strong>Registro de Provas:</strong> Salve prints e evidências</li>
+                            <li><strong>Delegacia:</strong> Em casos graves, registre B.O.</li>
+                            <li><strong>Adultos de Confiança:</strong> Converse com pais e professores</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <div class="alert alert-info">
+                        <h6><i class="bi bi-info-circle me-2"></i>Lei nº 14.811/2024</h6>
+                        <p class="mb-0">Esta lei incluiu o bullying e cyberbullying como crimes no Código Penal, com penas de multa e reclusão para intimidação sistemática por meios eletrônicos.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Boas Práticas -->
+    <section id="praticas" class="py-5">
+        <div class="container">
+            <h2 class="section-title text-center">Boas Práticas de Navegação Segura</h2>
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <div class="card protection-card p-4">
+                        <h5 class="text-center mb-4"><i class="bi bi-check-circle me-2"></i>Seu Guia Rápido de Segurança</h5>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <ul class="list-unstyled">
+                                    <li class="mb-2"><i class="bi bi-check text-success me-2"></i>Use senhas fortes e diferentes</li>
+                                    <li class="mb-2"><i class="bi bi-check text-success me-2"></i>Ative autenticação de dois fatores</li>
+                                    <li class="mb-2"><i class="bi bi-check text-success me-2"></i>Não compartilhe dados em redes públicas</li>
+                                    <li class="mb-2"><i class="bi bi-check text-success me-2"></i>Pense antes de clicar em links</li>
+                                    <li class="mb-2"><i class="bi bi-check text-success me-2"></i>Mantenha softwares atualizados</li>
+                                </ul>
+                            </div>
+                            <div class="col-md-6">
+                                <ul class="list-unstyled">
+                                    <li class="mb-2"><i class="bi bi-check text-success me-2"></i>Use conexões seguras</li>
+                                    <li class="mb-2"><i class="bi bi-check text-success me-2"></i>Cuidado com o que compartilha</li>
+                                    <li class="mb-2"><i class="bi bi-check text-success me-2"></i>Monitore suas contas regularmente</li>
+                                    <li class="mb-2"><i class="bi bi-check text-success me-2"></i>Use antivírus e firewall</li>
+                                    <li class="mb-2"><i class="bi bi-check text-success me-2"></i>Faça backups periódicos</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="cta-section py-5">
+        <div class="container text-center">
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <h2 class="mb-4">Proteja-se e Proteja os Outros</h2>
+                    <p class="lead mb-4">A segurança digital é uma responsabilidade de todos nós. Compartilhe este conhecimento e contribua para um ambiente online mais seguro.</p>
+                    <div class="highlight-box d-inline-block">
+                        <i class="bi bi-lightbulb me-2"></i>
+                        A prevenção começa com a conscientização
+                    </div>
+                    <div class="mt-4">
+                        <a href="#home" class="btn btn-custom btn-lg me-3">
+                            <i class="bi bi-arrow-up me-2"></i>Voltar ao Topo
+                        </a>
+                        <button class="btn btn-outline-light btn-lg" onclick="window.print()">
+                            <i class="bi bi-printer me-2"></i>Imprimir Cartilha
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <h5><i class="bi bi-shield-check me-2"></i>SENAC - Segurança Digital</h5>
+                    <p>Orientando estudantes para um ambiente digital mais seguro.</p>
+                </div>
+                <div class="col-lg-6 text-lg-end">
+                    <p class="mb-0">Baseado na legislação brasileira atual - LGPD, Marco Civil da Internet e Lei Carolina Dieckmann Cibernética.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Smooth scrolling para links de navegação
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Highlight do menu ativo baseado no scroll
+        window.addEventListener('scroll', function() {
+            let current = '';
+            const sections = document.querySelectorAll('section[id]');
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (scrollY >= (sectionTop - 200)) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            document.querySelectorAll('.navbar-nav .nav-link').forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
